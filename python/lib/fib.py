@@ -1,6 +1,8 @@
+from os import path
 from .file_util import read_list, write_list
 
-data_file = "./lib/fib.txt"
+
+data_file = path.join(path.dirname(path.realpath(__file__)),"./fib.dat")
 
 
 def preload_from_file():
@@ -13,6 +15,11 @@ def preload_from_file():
 
 	return data
 
+def write_to_file(data):
+	data = [str(i) for i in data]
+
+	write_list(data_file, data)
+
 def fib(maximum):
 	data = preload_from_file()
 
@@ -23,6 +30,8 @@ def fib(maximum):
 			current = data[-2] + data[-1]
 		else:
 			break
+
+	write_to_file(data)
 
 	return data
 
