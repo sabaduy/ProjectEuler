@@ -1,4 +1,5 @@
 from .file_util import read_list, write_list
+from .primes import sieve
 
 def get_factors(number):
 	"""Get the factors of a number"""
@@ -20,7 +21,7 @@ def get_factors(number):
 		elif len(factors) == 1:
 			divisor = divisor + 1
 
-		current = current + 1
+		current += 1
 
 
 	# Prepare to recreate factors after inflection point
@@ -31,8 +32,66 @@ def get_factors(number):
 	if current ** 2 == number:
 		factors.append(current)
 
-	# Recreate largewr factors
+	# Recreate larger factors
 	for i in reversed_factors:
 		factors.append(number // i)
 
 	return factors
+
+
+def get_prime_factors(number):
+	"""Get the prime factors of a number as a list"""
+	factors = [number]
+	# print(number)
+
+	# If number is a prime, skip the other logic
+	primes = sieve(number)
+	if number in primes:
+		return factors
+
+	while True:
+		not_primes = 0
+		old_factors = factors
+		factors = []
+
+		# Go through each factor iteratively until all primes are found
+		for i in old_factors:
+			temp = get_factors(i)
+			# print(temp)
+
+			# If prime, append to factors list
+			if len(temp) == 2:
+				factors.append(i)
+
+			# Else, append only the number in between (not 0 or the numebr)
+			else:
+				not_primes += 1
+				temp = temp[1:-1]
+				factors.extend(temp)
+
+				# Just in case the current i is a perfect square
+				if len(temp) == 1 and temp[0] ** 2 == i:
+					factors.append(temp[0])
+
+		# Break once only primes are left
+		# print(not_primes)
+		# print(factors)
+		if not_primes == 0:
+			# print("break")
+			break
+
+	return factors
+
+
+def get_prime_factors_dict(number):
+	"""Get the prime factors of a number as a dictionary"""
+	prime_factors = get_prime_factors(number)
+	as_dict = {}
+	for i in prime_factors:
+		if i not in as_dict.keys():
+			as_dict[i] = 1
+		else:
+			as_dict[i] = as_dict[i] + 1
+
+	return as_dict
+

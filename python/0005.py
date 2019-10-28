@@ -1,29 +1,23 @@
-import functools
-from lib.factors import get_factors
+from lib.primes import sieve
+from lib.factors import get_prime_factors_dict
 
-maximum = 10
-factors = []
-discards = set()
+maximum = 20
+prime_factors = {}
 
-for i in range(maximum,0,-1):
-	print(i)
+for i in range(2, maximum + 1):
+	# print(i)
 
-	# First pass
-	if len(factors) == 0:
-		temp = get_factors(i)
-		temp.reverse()
-		factors.append(i)
-		discards.update(set(temp[1:]))
+	temp = get_prime_factors_dict(i)
+	print(temp)
 
-	else:
-		temp = get_factors(i)
+	for key, value in temp.items():
+		if key not in prime_factors.keys() or prime_factors[key] < value:
+			prime_factors[key] = value
 
-		
+print(prime_factors)
 
-
-print(factors)
-print(discards)
-answer = functools.reduce(lambda a, b : a * b, factors)
-
+answer = 1
+for key, value in prime_factors.items():
+	answer *= key ** value
 
 print(answer)

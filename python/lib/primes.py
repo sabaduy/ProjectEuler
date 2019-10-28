@@ -37,7 +37,7 @@ def sieve(maximum):
 		if is_prime:
 			primes.append(current)
 
-		current = current + 1
+		current += 1
 
 	write_to_file(primes)
 
