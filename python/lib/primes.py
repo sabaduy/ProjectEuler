@@ -2,7 +2,7 @@ from os import path
 from .file_util import read_list, write_list
 
 
-data_file = path.join(path.dirname(path.realpath(__file__)),"./primes.dat")
+data_file = path.join(path.dirname(path.realpath(__file__)),"./primes.txt")
 
 def preload_from_file():
 	data = [int(i) for i in read_list(data_file)]
