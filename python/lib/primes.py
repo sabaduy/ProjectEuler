@@ -64,7 +64,7 @@ def sieve_until_count(max_count):
 		current += 1
 
 	if len(primes) > max_count:
-		primes = primes[:max_count+1]
+		primes = primes[:max_count]
 
 	write_to_file(primes)
 
