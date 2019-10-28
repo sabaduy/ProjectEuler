@@ -7,3 +7,4 @@ This is a list of answers to the Project Euler problems.
 0005 = 232792560
 0006 = 25164150
 0007 = 104743
+0008 = 23514624000
