@@ -2,7 +2,7 @@ import functools
 from os import path
 from lib.file_util import read_list, write_list
 
-data_file = path.join(path.dirname(path.realpath(__file__)),"./0008.txt")
+data_file = path.join(path.dirname(path.realpath(__file__)),"../data/0008.txt")
 data = ''.join(read_list(data_file))
 
 count = 13
