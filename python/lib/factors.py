@@ -41,44 +41,15 @@ def get_factors(number):
 
 def get_prime_factors(number):
 	"""Get the prime factors of a number as a list"""
-	factors = [number]
-	# print(number)
-
-	# If number is a prime, skip the other logic
 	primes = sieve(number)
-	if number in primes:
-		return factors
-
-	while True:
-		not_primes = 0
-		old_factors = factors
-		factors = []
-
-		# Go through each factor iteratively until all primes are found
-		for i in old_factors:
-			temp = get_factors(i)
-			# print(temp)
-
-			# If prime, append to factors list
-			if len(temp) == 2:
+	
+	factors = []
+	
+	while number > 1:
+		for i in primes:
+			while number % i == 0:
 				factors.append(i)
-
-			# Else, append only the number in between (not 0 or the numebr)
-			else:
-				not_primes += 1
-				temp = temp[1:-1]
-				factors.extend(temp)
-
-				# Just in case the current i is a perfect square
-				if len(temp) == 1 and temp[0] ** 2 == i:
-					factors.append(temp[0])
-
-		# Break once only primes are left
-		# print(not_primes)
-		# print(factors)
-		if not_primes == 0:
-			# print("break")
-			break
+				number = number // i
 
 	return factors
 
