@@ -1,6 +1,6 @@
 from .file_util import read_list, write_list
 
-def factors(number):
+def get_factors(number):
 	"""Get the factors of a number"""
 	factors = [1]
 
