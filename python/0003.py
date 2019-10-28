@@ -1,10 +1,10 @@
-from lib.factors import factors
+from lib.factors import get_factors
 
-mylist = factors(600851475143)
+mylist = get_factors(600851475143)
 
 answer = 1
 for i in mylist:
-	if len(factors(i)) == 2:
+	if len(get_factors(i)) == 2:
 		answer = i
 
 print(answer)
