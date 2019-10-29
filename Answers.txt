@@ -9,3 +9,4 @@ This is a list of answers to the Project Euler problems.
 0007 = 104743
 0008 = 23514624000
 0009 = 31875000
+0010 = 142913828922
