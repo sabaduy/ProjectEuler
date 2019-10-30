@@ -13,3 +13,4 @@ This is a list of answers to the Project Euler problems.
 0011 = 70600674
 0012 = 76576500
 0013 = 5537376230
+0014 = 837799
