@@ -18,6 +18,6 @@ import math
 num_rows = 20
 num_cols = 20
 
-answer = math.factorial(num_rows + num_cols)/(math.factorial(num_rows)*math.factorial(num_rows + num_cols - num_rows))
+answer = math.factorial(num_rows + num_cols)/(math.factorial(num_rows)*math.factorial(num_cols))
 print(int(answer))
 
