@@ -19,3 +19,4 @@ This is a list of answers to the Project Euler problems.
 0017 = 21124
 0018 = 1074
 0019 = 171
+0020 = 648
