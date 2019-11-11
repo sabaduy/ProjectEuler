@@ -26,9 +26,26 @@ def fib(maximum):
 	"""Get the Fibonacci sequence up to the maximum"""
 	sequence = preload_from_file()
 
-	current = sequence[0] + sequence[1]
+	current = sequence[-2] + sequence[-1]
 	while True:
 		if current <= maximum:
+			sequence.append(current)
+			current = sequence[-2] + sequence[-1]
+		else:
+			break
+
+	write_to_file(sequence)
+
+	return sequence
+
+
+def fib_n_digits(n_digits):
+	"""Get the Fibonacci sequence up to the wanted number of digits"""
+	sequence = preload_from_file()
+
+	current = sequence[-2] + sequence[-1]
+	while True:
+		if len(str(current)) <= n_digits:
 			sequence.append(current)
 			current = sequence[-2] + sequence[-1]
 		else:
