@@ -39,6 +39,10 @@ def get_factors(number):
 	return factors
 
 
+def get_proper_factors(number):
+	return get_factors(number)[0:-1]
+
+
 def get_prime_factors(number):
 	"""Get the prime factors of a number as a list"""
 	primes = sieve(number)

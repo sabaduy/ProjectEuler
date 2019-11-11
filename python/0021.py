@@ -1,7 +1,4 @@
-from lib.factors import get_factors
-
-def get_proper_factors(number):
-	return get_factors(number)[0:-1]
+from lib.factors import get_proper_factors
 
 amicable_numbers = set()
 for a in range(1,10000):
