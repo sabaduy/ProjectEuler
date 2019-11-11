@@ -21,4 +21,5 @@ This is a list of answers to the Project Euler problems.
 0019 = 171
 0020 = 648
 0021 = 31626
+0022 = 871198282
 0067 = 7273
