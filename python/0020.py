@@ -1,6 +1,6 @@
-import math
+from math import factorial
 
-answer = math.factorial(100)
+answer = factorial(100)
 answer = str(answer)
 answer = [int(i) for i in answer]
 

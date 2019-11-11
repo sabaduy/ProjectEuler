@@ -20,3 +20,4 @@ This is a list of answers to the Project Euler problems.
 0018 = 1074
 0019 = 171
 0020 = 648
+0021 = 31626
