@@ -24,4 +24,6 @@ This is a list of answers to the Project Euler problems.
 0022 = 871198282
 0023 = 4179871
 0024 = 2783915460
+0025 = 4782
+0026 = 983
 0067 = 7273
