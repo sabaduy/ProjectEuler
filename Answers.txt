@@ -29,4 +29,5 @@ This is a list of answers to the Project Euler problems.
 0027 = -59231
 0028 = 669171001
 0029 = 9183
+0030 = 443839
 0067 = 7273
